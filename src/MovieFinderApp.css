@@ -1,0 +1,54 @@
+.App {
+    font-family: sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+  }
+  .App.light-mode{
+    background-color: black;
+  }
+  .App.dark-mode{
+    background-color: white;
+  }
+  
+  .movie-search input{
+    padding: 5px;
+    margin: 5px;
+  }
+  .movie-search button{
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .movie-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .movie-item{
+    margin: 10px;
+  }
+  
+  .favorites{
+    padding: 10px;
+  }
+  
+  .favorite-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .favorite-item{
+    margin: 10px;
+  }
+  .movie-details{
+    padding: 10px;
+  }
+
+/* Light Mode Gradients */
+.App.light-mode {
+  background: linear-gradient(135deg, #e0eafc, #ffc2dc); /* Soft Blue Gradient */
+}
+
+
+/* Dark Mode Gradients */
+.App.dark-mode {
+  background: linear-gradient(135deg, #283048, #859398); /* Dark Gray/Blue Gradient */
+}

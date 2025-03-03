@@ -1,0 +1,411 @@
+/* RecordApp.css */
+  /* .record-app {
+    position: relative;
+    color: white;
+    background: linear-gradient(45deg, #ff9a9e, #34bda2, #ca84f9, #88c35e);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+    overflow: auto; 
+  } */
+
+  
+  /* Light Mode */
+  .record-app {
+    position: relative;
+    /* color: white; */
+    /* background: #aee790e4; */
+    /* background: linear-gradient(45deg, #fbacae, #34bda2, #ca84f9, #88c35e); */
+    background: linear-gradient(135deg, #f0fbe0, #e6f7d0);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: auto;
+    transition: background 0.5s, color 0.5s;
+  }
+  /* Dark Mode */
+  .record-app.dark-mode {
+    background: #1e1e1e;
+    color: #f5f5f5;
+  }
+
+  .record-app.dark-mode .search-bar {
+    /* background: #333; */
+    background: linear-gradient(45deg, #3e3d3d, #222d2a, #19151b, #171f12);
+    color: white;
+    border: 1px solid #777;
+  }
+
+  .record-app.dark-mode .timeline-slider {
+    background: #444;
+  }
+
+  .record-app.dark-mode .control-button {
+    color: white;
+  }
+
+
+  /* Button Styling */
+  .menu-button,
+  .profile-button,
+  button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+  /* .background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+    pointer-events: none; 
+  } */
+  
+
+  /* .record-app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s infinite alternate ease-in-out;
+  } */
+
+  /* Smooth gradient transition effect */
+  @keyframes gradientAnimation {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .profile-button,
+  .menu-button {
+    background: none;
+    border: none;
+    /* color: white; */
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    /* background-color: #383e4a; */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: black;
+    width: 60%;
+  }
+  
+  .language-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .language-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flag {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .record-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .record-circle {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #5a6270;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .record-button {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(242, 206, 60);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* .microphone {
+    width: 40px;
+    height: 60px;
+    background-color: white;
+    border-radius: 20px 20px 5px 5px;
+    position: relative;
+  }
+  
+  .microphone::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #e57373;
+    border-radius: 50%;
+  }
+  
+  .microphone::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  .microphone.recording {
+    animation: pulse 1s infinite ease-in-out;
+  } 
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  } */
+  .microphone {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    background: url('/public/mic-2.png') no-repeat center;
+    background-size: contain;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+/* Pulsing effect for recording */
+.microphone.recording::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(241, 11, 34, 0.849); /* Light red */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    animation: pulse 1s infinite ease-in-out;
+}
+
+/* Keyframes for smooth pulse effect */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+    }
+}
+  
+  .record-text {
+    background: none;
+    border: none;
+    /* color: white; */
+    color: black;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .record-text.dark-mode {
+    background: none;
+    border: none;
+    /* color: white; */
+    color: white;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .recording-time.darkmode {
+    color: white;
+  }
+
+  
+  .waveform {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .waveform-placeholder {
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    align-items: center;
+  }
+  
+  .waveform-line {
+    width: 5px;
+    height: 40px;
+    background-color: #e57373;
+    border-radius: 2px;
+  }
+  
+  .timeline {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .timeline-slider {
+    width: 100%;
+    appearance: none;
+    height: 5px;
+    background: #5a6270;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
+  
+  .timeline-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #e57373;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .time-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .control-button {
+    background: none;
+    border: none;
+    /* color: white; */
+    color: black;
+    font-size: 24px;
+    margin: 0 15px;
+    cursor: pointer;
+  }
+  
+  .play-button {
+    font-size: 30px;
+  }
+
+  /* RecordApp.css */
+  .name-input-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .name-input-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .name-input-field {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+  }
+
+  .name-input-buttons button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .name-input-buttons button:first-child {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .name-input-buttons button:last-child {
+    background-color: #f44336;
+    color: white;
+  }
+
+
+  
