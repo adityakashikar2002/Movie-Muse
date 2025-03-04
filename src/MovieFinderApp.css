@@ -1,4 +1,4 @@
-.movie-finder {
+/* .movie-finder {
     font-family: sans-serif;
     min-height: 100vh;
     transition: background-color 0.3s ease;
@@ -42,13 +42,98 @@
     padding: 10px;
   }
 
-/* Light Mode Gradients */
+
 .movie-finder.light-mode {
-  background: linear-gradient(135deg, #e0eafc, #ffc2dc); /* Soft Blue Gradient */
+  background: linear-gradient(135deg, #e0eafc, #ffc2dc); 
 }
 
 
-/* Dark Mode Gradients */
+
 .movie-finder.dark-mode {
-  background: linear-gradient(135deg, #283048, #859398); /* Dark Gray/Blue Gradient */
+  background: linear-gradient(135deg, #283048, #859398); 
+} */
+
+/* MovieFinderApp.css */
+
+.movie-finder {
+  font-family: sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.movie-finder.light-mode {
+  background: linear-gradient(135deg, #e0eafc, #ffc2dc);
+  color: black; /* Added text color for light mode */
+}
+
+.movie-finder.dark-mode {
+  background: linear-gradient(135deg, #283048, #859398);
+  color: white; /* Added text color for dark mode */
+}
+
+.movie-search input {
+  padding: 5px;
+  margin: 5px;
+}
+
+.movie-search button {
+  padding: 5px;
+  margin: 5px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-item {
+  margin: 10px;
+}
+
+.favorites {
+  padding: 10px;
+}
+
+.favorite-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.favorite-item {
+  margin: 10px;
+}
+
+.movie-details {
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .movie-list,
+  .favorite-list {
+      justify-content: center; /* Center items on smaller screens */
+  }
+
+  .movie-item,
+  .favorite-item {
+      width: 45%; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-item,
+  .favorite-item {
+      width: 90%; /* Adjust width for mobile */
+  }
+
+  .movie-search input,
+  .movie-search button {
+      width: 90%; /* Full width search elements */
+      display: block; /* Stack elements vertically */
+      margin: 5px auto; /* Center with auto margins */
+  }
+
+  .movie-details {
+      padding: 5px; /* Reduce padding on mobile */
+  }
 }

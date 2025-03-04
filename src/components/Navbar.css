@@ -1,10 +1,4 @@
-   /* .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  } */
-
+/* 
   .nav {
     display: flex;
     justify-content: space-between;
@@ -15,7 +9,7 @@
   .nav-buttons {
     display: flex;
     align-items: center;
-    gap: 110px; /* Adjust spacing between buttons */
+    gap: 110px; 
   }
   
   
@@ -188,4 +182,251 @@
   
   .light-mode .profile-details p {
     color: #272626; 
+  } */
+
+  /* Navbar.css */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 110px;
+}
+
+.nav.dark-mode {
+  color: white;
+}
+
+.nav.light-mode {
+  color: black;
+}
+
+.nav .dark-mode-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav .search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 20px;
+}
+
+.nav .search-bar input {
+  width: 600px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+.nav.dark-mode .search-bar input {
+  background-color: #444;
+  color: white;
+  border-color: #555;
+}
+
+.nav .search-bar button {
+  padding: 8px 12px;
+  margin-left: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav .search-bar button:hover {
+  background-color: #0056b3;
+}
+
+.nav .search-suggestions {
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-width: 600px;
+  width: 100%;
+  top: 45px;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.nav.dark-mode .search-suggestions {
+  background-color: #444;
+  border-color: #555;
+}
+
+.nav .search-suggestions li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nav.dark-mode .search-suggestions li {
+  color: white;
+}
+
+.nav .search-suggestions li:hover {
+  background: #f1f1f1;
+}
+
+.nav.dark-mode .search-suggestions li:hover {
+  background: #555;
+}
+
+.nav .suggestion-poster {
+  width: 50px;
+  height: 70px;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.profile-dropdown-content {
+  padding: 10px;
+  min-width: 200px;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+}
+
+.profile-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333333;
+  text-shadow: none;
+}
+
+.profile-details {
+  margin-bottom: 20px;
+}
+
+.profile-details p {
+  margin: 5px 0;
+  color: #666666;
+  font-size: 14px;
+}
+
+.profile-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+  background-color: #0056b3;
+}
+
+.dark-mode .profile-dropdown {
+  background-color: #222222;
+  border-color: #444444;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .profile-title {
+  color: #ffffff;
+}
+
+.dark-mode .profile-details p {
+  color: #cccccc;
+}
+
+.light-mode .profile-title {
+  color: #000000;
+}
+
+.light-mode .profile-details p {
+  color: #272626;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .nav-buttons {
+      gap: 50px; /* Reduce gap for medium screens */
   }
+
+  .nav .search-bar input {
+      width: 400px; /* Reduce search bar width */
+  }
+
+  .nav .search-suggestions {
+      max-width: 400px; /* Match search suggestion width */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-buttons {
+      gap: 20px; /* Further reduce gap */
+  }
+
+  .nav .search-bar input {
+      width: 250px; /* Further reduce search bar width */
+  }
+
+  .nav .search-suggestions {
+      max-width: 250px; /* Match search suggestion width */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+      flex-direction: column; /* Stack items vertically */
+      align-items: stretch; /* Stretch items to full width */
+  }
+
+  .nav-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center; /* Center buttons */
+      gap: 10px; /* Reduce gap */
+      margin-top: 10px; /* Add margin */
+  }
+
+  .nav .search-bar {
+      margin-left: 0; /* Remove left margin */
+      margin-top: 10px; /* Add top margin */
+      width: 100%; /* Full width search bar */
+  }
+
+  .nav .search-bar input {
+      width: 100%; /* Full width input */
+  }
+
+  .nav .search-suggestions {
+      max-width: 100%; /* Full width suggestions */
+  }
+
+  .profile-dropdown {
+      width: 90%; /* Adjust profile dropdown width for mobile */
+      left: 5%; /* Center profile dropdown */
+      right: auto; /* reset right property */
+  }
+}
