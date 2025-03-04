@@ -1,12 +1,12 @@
 // import React, { useEffect, useState } from "react";
 // import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
-// import "./App.css";
 // import Login from "./components/login";
 // import SignUp from "./components/register";
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
-// import RecordApp from "./RecordApp";
 // import { auth } from "./components/firebase";
+// import MovieFinderApp from "./MovieFinderApp";
+// import './App.css';
 
 // function AppWrapper() {
 //   const [user, setUser] = useState(null);
@@ -27,10 +27,12 @@
 //       <div className={isRecordApp ? "record-mode" : "auth-wrapper"}>
 //         <div className={isRecordApp ? "record-mode" : "auth-inner"}>
 //           <Routes>
-//             <Route path="/" element={user ? <Navigate to="/app" /> : <Login />} />
+//             {/* <Route path="/" element={user ? <Navigate to="/app" /> : <Login />} /> */}
+//             <Route index element={user ? <Navigate to="/app" /> : <Login />} />
 //             <Route path="/login" element={<Login />} />
 //             <Route path="/register" element={<SignUp />} />
-//             <Route path="/app" element={<RecordApp />} />
+//             <Route path="/app" element={<MovieFinderApp/>} />
+//             <Route path="/app/*" element={<MovieFinderApp />} /> {/* Add the wildcard here */}
 //           </Routes>
 //           <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
 //         </div>
@@ -49,41 +51,54 @@
 
 // export default App;
 
-// MovieFinderApp.jsx (Main App Component)
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MovieSearch from './components/MovieSearch';
-import MovieDetails from './components/MovieDetails';
-import Favorites from './components/Favorites';
-import Navbar from './components/Navbar';
-import { Provider } from 'react-redux';
-import store from './redux/store';
-import './MovieFinderApp.css'; // Import your CSS
-import ThemeContext from './context/ThemeContext';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import Login from "./components/login";
+import SignUp from "./components/register";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { auth } from "./components/firebase";
+import MovieFinderApp from "./MovieFinderApp";
+import './App.css';
 
-function MovieFinderApp() {
-  const [darkMode, setDarkMode] = useState(false);
+function AppWrapper() {
+  const [user, setUser] = useState(null);
+  const location = useLocation();
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // Check if the current route is login or register
+  const isAuthPage = location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/";
 
   return (
-    <Provider store={store}>
-      <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
-        <div className={`App ${darkMode ? 'dark-mode' : 'light-mode'}`}>
-          <Router>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<MovieSearch darkMode={darkMode}/>} />
-              <Route path="/movie/:id" element={<MovieDetails darkMode={darkMode}/>}/>
-              <Route path="/favorites" element={<Favorites darkMode={darkMode}/>}/>
-            </Routes>
-          </Router>
+    <div className={isAuthPage ? "App" : ""}>
+      <div className={isAuthPage ? "auth-wrapper" : ""}>
+        <div className={isAuthPage ? "auth-inner" : ""}>
+          <Routes>
+            <Route index element={user ? <Navigate to="/app" /> : <Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<SignUp />} />
+            <Route path="/app" element={<MovieFinderApp />} />
+            <Route path="/app/*" element={<MovieFinderApp />} />
+          </Routes>
+          <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
         </div>
-      </ThemeContext.Provider>
-    </Provider>
+      </div>
+    </div>
   );
 }
 
-export default MovieFinderApp;
+function App() {
+  return (
+    <Router>
+      <AppWrapper />
+    </Router>
+  );
+}
+
+export default App;

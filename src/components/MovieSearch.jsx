@@ -75,11 +75,11 @@ function MovieSearch({ darkMode }) {
       <div className="movie-grid">
         {displayedMovies.map((movie) => (
           <div key={movie.imdbID} className="movie-item">
-            <Link to={`/movie/${movie.imdbID}`}>
+            <Link to={`/app/movie/${movie.imdbID}`}>
             <img src={movie.Poster} alt={movie.Title} />
             </Link>
             <div className="movie-info">
-              <Link to={`/movie/${movie.imdbID}`}>
+              <Link to={`/app/movie/${movie.imdbID}`}>
                 <div className="movie-text">
                   <h3>{movie.Title}</h3>
                   <p className="movie-year">{movie.Year}</p>

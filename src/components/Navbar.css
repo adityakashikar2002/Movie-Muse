@@ -101,3 +101,77 @@
     margin-right: 15px;
     border-radius: 4px;
   }
+
+  .profile-dropdown-content {
+    padding: 10px;
+    min-width: 200px;
+  } 
+
+  .profile-dropdown {
+    position: absolute;
+    top: 80px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000;
+    padding: 20px;
+    width: 280px; /* Adjust width as needed */
+    text-align: center;
+  }
+  
+  .profile-title {
+    font-size: 28px; /* Slightly smaller for dropdown */
+    margin-bottom: 10px;
+    color: #333333; /* Dark gray for good contrast */
+    text-shadow: none; /* Removed text shadow */
+  }
+  
+  .profile-details {
+    margin-bottom: 20px;
+  }
+  
+  .profile-details p {
+    margin: 5px 0;
+    color: #666666; /* Medium gray */
+    font-size: 14px; /* Smaller font size */
+  }
+  
+  .profile-button {
+    padding: 12px 25px; /* Slightly smaller padding */
+    border: none;
+    border-radius: 6px; /* Less rounded corners */
+    background: #007bff; /* Blue button for logout */
+    color: #ffffff; /* White text */
+    font-weight: 500; /* Lighter font weight */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Dark mode adjustments */
+  .dark-mode .profile-dropdown {
+    background-color: #222222; /* Dark background */
+    border-color: #444444; /* Darker border */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Light shadow on dark */
+  }
+  
+  .dark-mode .profile-title {
+    color: #ffffff; /* White text */
+  }
+  
+  .dark-mode .profile-details p {
+    color: #cccccc; /* Light gray text */
+  }
+
+  .light-mode .profile-title {
+    color: #000000; /* White text */
+  }
+  
+  .light-mode .profile-details p {
+    color: #272626; /* Light gray text */
+  }

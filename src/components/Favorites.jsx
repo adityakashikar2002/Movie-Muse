@@ -16,7 +16,7 @@ function Favorites() {
         <div className="favorite-list">
           {favorites.map((movie) => (
             <div key={movie.imdbID} className="favorite-item">
-              <Link to={`/movie/${movie.imdbID}`}>
+              <Link to={`/app/movie/${movie.imdbID}`}>
                 <img src={movie.Poster} alt={movie.Title} />
                 <h3>{movie.Title}</h3>
               </Link>

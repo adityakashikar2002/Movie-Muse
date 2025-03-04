@@ -1,12 +1,12 @@
-.App {
+.movie-finder {
     font-family: sans-serif;
     min-height: 100vh;
     transition: background-color 0.3s ease;
   }
-  .App.light-mode{
+  .movie-finder.light-mode{
     background-color: black;
   }
-  .App.dark-mode{
+  .movie-finder.dark-mode{
     background-color: white;
   }
   
@@ -43,12 +43,12 @@
   }
 
 /* Light Mode Gradients */
-.App.light-mode {
+.movie-finder.light-mode {
   background: linear-gradient(135deg, #e0eafc, #ffc2dc); /* Soft Blue Gradient */
 }
 
 
 /* Dark Mode Gradients */
-.App.dark-mode {
+.movie-finder.dark-mode {
   background: linear-gradient(135deg, #283048, #859398); /* Dark Gray/Blue Gradient */
 }

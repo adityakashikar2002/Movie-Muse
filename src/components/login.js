@@ -27,8 +27,8 @@ function Login() {
   };
 
   return (
-    <div className="form-container">
-      <h1>Welcome to Econote</h1>
+    <div className="form-container" >
+      <h1>Welcome to Movie Muse</h1>
       <h4 className="form-title">Login</h4>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
