@@ -80,14 +80,72 @@ function Navbar() {
     }
   };
 
+  // return (
+  //   <nav className={`nav ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+  //     <img
+  //       src="/logo-bg.png"
+  //       alt="Logo"
+  //       className="h-20 logo cursor-pointer" // Add cursor-pointer
+  //       onClick={handleLogoClick} // Add onClick handler
+  //     />
+  //     <div className="search-bar">
+  //       <input
+  //         type="text"
+  //         placeholder="Search Movies or Shows"
+  //         value={searchTerm}
+  //         onChange={handleInputChange}
+  //       />
+  //       <button onClick={handleSearch}>Search</button>
+  //       {searchSuggestions.length > 0 && (
+  //         <ul className="search-suggestions">
+  //           {searchSuggestions.map((movie) => (
+  //             <li key={movie.imdbID} onClick={() => handleSuggestionClick(movie)}>
+  //               <img src={movie.Poster} alt={movie.Title} className="suggestion-poster" />
+  //               {movie.Title}
+  //             </li>
+  //           ))}
+  //         </ul>
+  //       )}
+  //     </div>
+
+  //     <button onClick={toggleDarkMode} className="dark-mode-button">
+  //       {darkMode ? (
+  //         <img src="/lightm.png" alt="Light Mode" className="w-8 h-8 rounded-full" />
+  //       ) : (
+  //         <img src="/sleep-mode.png" alt="Dark Mode" className="w-8 h-8 rounded-full" />
+  //       )}
+  //     </button>
+
+  //     <button className="profile-button2" onClick={handleProfileClick}>
+  //         {darkMode ? <img src="/account.png" alt="User Profile" className="w-8 h-8 rounded-full" /> : <img src="/user1.png" alt="User Profile" className="w-8 h-8 rounded-full" />}
+  //     </button>
+  //     {showProfile && userDetails && (
+  //         <div className="profile-dropdown"> {/* Changed to profile-dropdown */}
+  //           <div className="profile-dropdown-content"> {/* Changed to profile-dropdown-content */}
+  //             {/* <div className="profile-image-container">
+  //               <img src={userDetails.photo} alt="Profile" className="profile-image" />
+  //             </div> */}
+  //             <h3 className="profile-title">Welcome, {userDetails.firstName}</h3>
+  //             <div className="profile-details">
+  //               <p>Email: {userDetails.email}</p>
+  //             </div>
+  //             <button className="profile-button" onClick={handleLogout}>
+  //               Logout
+  //             </button>
+  //           </div>
+  //         </div>
+  //       )}
+  //   </nav>
+  // );
   return (
     <nav className={`nav ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <img
         src="/logo-bg.png"
         alt="Logo"
-        className="h-20 logo cursor-pointer" // Add cursor-pointer
-        onClick={handleLogoClick} // Add onClick handler
+        className="h-20 logo cursor-pointer"
+        onClick={handleLogoClick}
       />
+  
       <div className="search-bar">
         <input
           type="text"
@@ -107,36 +165,40 @@ function Navbar() {
           </ul>
         )}
       </div>
-
-      <button onClick={toggleDarkMode} className="dark-mode-button">
-        {darkMode ? (
-          <img src="/lightm.png" alt="Light Mode" className="w-8 h-8 rounded-full" />
-        ) : (
-          <img src="/sleep-mode.png" alt="Dark Mode" className="w-8 h-8 rounded-full" />
-        )}
-      </button>
-
-      <button className="profile-button2" onClick={handleProfileClick}>
-          {darkMode ? <img src="/account.png" alt="User Profile" className="w-8 h-8 rounded-full" /> : <img src="/user1.png" alt="User Profile" className="w-8 h-8 rounded-full" />}
-      </button>
-      {showProfile && userDetails && (
-          <div className="profile-dropdown"> {/* Changed to profile-dropdown */}
-            <div className="profile-dropdown-content"> {/* Changed to profile-dropdown-content */}
-              {/* <div className="profile-image-container">
-                <img src={userDetails.photo} alt="Profile" className="profile-image" />
-              </div> */}
+  
+      {/* Grouped buttons in a flex container */}
+      <div className="nav-buttons">
+        <button onClick={toggleDarkMode} className="dark-mode-button">
+          {darkMode ? (
+            <img src="/lightm.png" alt="Light Mode" className="w-8 h-8 rounded-full" />
+          ) : (
+            <img src="/sleep-mode.png" alt="Dark Mode" className="w-8 h-8 rounded-full" />
+          )}
+        </button>
+  
+        <button className="profile-button2" onClick={handleProfileClick}>
+          {darkMode ? (
+            <img src="/account.png" alt="User Profile" className="w-8 h-8 rounded-full" />
+          ) : (
+            <img src="/user1.png" alt="User Profile" className="w-8 h-8 rounded-full" />
+          )}
+        </button>
+  
+        {showProfile && userDetails && (
+          <div className="profile-dropdown">
+            <div className="profile-dropdown-content">
               <h3 className="profile-title">Welcome, {userDetails.firstName}</h3>
               <div className="profile-details">
                 <p>Email: {userDetails.email}</p>
               </div>
-              <button className="profile-button" onClick={handleLogout}>
-                Logout
-              </button>
+              <button className="profile-button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
         )}
+      </div>
     </nav>
   );
+  
 }
 
 export default Navbar;

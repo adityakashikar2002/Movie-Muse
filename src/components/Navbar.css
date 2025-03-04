@@ -1,9 +1,23 @@
-   .nav {
+   /* .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  } */
+
+  .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
   }
+  
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 110px; /* Adjust spacing between buttons */
+  }
+  
   
   .nav.dark-mode {
     color: white;
@@ -22,8 +36,8 @@
   .nav .search-bar {
     display: flex;
     align-items: center;
-    position: relative; /* Needed for absolute positioning of suggestions */
-    margin-left: 20px; /* Add some space between logo and search bar */
+    position: relative; 
+    margin-left: 20px; 
   }
   
   .nav .search-bar input {
@@ -63,7 +77,7 @@
     border: 1px solid #ccc;
     max-width: 600px;
     width: 100%;
-    top: 45px; /* Adjust as needed */
+    top: 45px; 
     left: 0;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -109,23 +123,23 @@
 
   .profile-dropdown {
     position: absolute;
-    top: 80px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    background-color: #ffffff; /* White background */
-    border: 1px solid #e0e0e0; /* Light border */
+    top: 80px; 
+    right: 10px; 
+    background-color: #ffffff; 
+    border: 1px solid #e0e0e0; 
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     z-index: 1000;
     padding: 20px;
-    width: 280px; /* Adjust width as needed */
+    width: 280px; 
     text-align: center;
   }
   
   .profile-title {
-    font-size: 28px; /* Slightly smaller for dropdown */
+    font-size: 28px; 
     margin-bottom: 10px;
-    color: #333333; /* Dark gray for good contrast */
-    text-shadow: none; /* Removed text shadow */
+    color: #333333; 
+    text-shadow: none; 
   }
   
   .profile-details {
@@ -134,44 +148,44 @@
   
   .profile-details p {
     margin: 5px 0;
-    color: #666666; /* Medium gray */
-    font-size: 14px; /* Smaller font size */
+    color: #666666; 
+    font-size: 14px; 
   }
   
   .profile-button {
-    padding: 12px 25px; /* Slightly smaller padding */
+    padding: 12px 25px; 
     border: none;
-    border-radius: 6px; /* Less rounded corners */
-    background: #007bff; /* Blue button for logout */
-    color: #ffffff; /* White text */
-    font-weight: 500; /* Lighter font weight */
+    border-radius: 6px; 
+    background: #007bff; 
+    color: #ffffff; 
+    font-weight: 500; 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .profile-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
   }
   
-  /* Dark mode adjustments */
+
   .dark-mode .profile-dropdown {
-    background-color: #222222; /* Dark background */
-    border-color: #444444; /* Darker border */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Light shadow on dark */
+    background-color: #222222; 
+    border-color: #444444; 
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); 
   }
   
   .dark-mode .profile-title {
-    color: #ffffff; /* White text */
+    color: #ffffff; 
   }
   
   .dark-mode .profile-details p {
-    color: #cccccc; /* Light gray text */
+    color: #cccccc; 
   }
 
   .light-mode .profile-title {
-    color: #000000; /* White text */
+    color: #000000; 
   }
   
   .light-mode .profile-details p {
-    color: #272626; /* Light gray text */
+    color: #272626; 
   }
