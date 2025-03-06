@@ -189,7 +189,7 @@ function Navbar() {
             <div className="profile-dropdown-content">
               <h3 className="profile-title">Welcome, {userDetails.firstName}</h3>
               <div className="profile-details">
-                <p>Email: {userDetails.email}</p>
+                <p>{userDetails.email}</p>
               </div>
               <button className="profile-button" onClick={handleLogout}>Logout</button>
             </div>

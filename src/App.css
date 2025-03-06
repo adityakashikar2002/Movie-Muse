@@ -324,7 +324,7 @@ body {
 }
 
 .profile-title {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 15px;
   color: #fff;
 }
@@ -345,7 +345,7 @@ body {
   color: #bbb;
 }
 
-.google-signin-container {
+/* .google-signin-container {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
@@ -374,7 +374,72 @@ body {
 .google-icon {
   width: 32px;
   height: 32px;
+} */
+
+.oauth-signin-container {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.oauth-signin-text {
+  color: #bbb;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Container for all OAuth buttons */
+.oauth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Common styles for OAuth buttons */
+.oauth-button {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  padding: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect */
+.oauth-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Icons */
+.oauth-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Google-specific styling */
+.google-signin-button {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* GitHub-specific styling */
+.github-signin-button {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Facebook-specific styling */
+.facebook-signin-button {
+  background: rgba(59, 89, 152, 0.15);
+}
+
+/* Facebook hover effect */
+.facebook-signin-button:hover {
+  box-shadow: 0 3px 8px rgba(59, 89, 152, 0.5);
+}
+
+
 
 .record-mode {
   all: unset;
