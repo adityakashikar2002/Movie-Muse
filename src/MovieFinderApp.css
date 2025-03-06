@@ -62,7 +62,7 @@
 }
 
 .movie-finder.light-mode {
-  background: linear-gradient(135deg, #e0eafc, #ffc2dc);
+  background: linear-gradient(135deg, #adc1e7, #f1afcc);
   color: black; /* Added text color for light mode */
 }
 
