@@ -134,7 +134,7 @@ function SignInWithOAuth() {
           <img src={require("../google.png")} alt="Google" className="oauth-icon" />
         </div>
         <div className="oauth-button github-signin-button" onClick={githubLogin}>
-          <img src={require("../github.png")} alt="GitHub" className="oauth-icon" />
+          <img src={require("../github-1-bg.png")} alt="GitHub" className="oauth-icon" />
         </div>
         <div className="oauth-button facebook-signin-button" onClick={facebookLogin}>
           <img src={require("../facebook.png")} alt="Facebook" className="oauth-icon" />

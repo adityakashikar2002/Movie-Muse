@@ -419,6 +419,10 @@ body {
   height: 32px;
 }
 
+/* .oauth-icon-github {
+  width: 40px;
+  height: 40px;
+} */
 /* Google-specific styling */
 .google-signin-button {
   background: rgba(255, 255, 255, 0.15);
